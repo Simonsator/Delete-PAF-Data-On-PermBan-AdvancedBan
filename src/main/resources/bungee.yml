@@ -1,0 +1,4 @@
+name: Delete-PAF-Data-On-Perm-Ban-AdvancedBan
+version: ${project.version}
+main: de.simonsator.partyandfriends.datadeleter.advancedban.ABDeleterPlugin
+author: Simonsator
