@@ -2,7 +2,6 @@ package de.simonsator.partyandfriends.datadeleter.advancedban;
 
 import de.simonsator.partyandfriends.api.PAFExtension;
 import de.simonsator.partyandfriends.api.events.message.SimpleMessageEvent;
-import de.simonsator.partyandfriends.api.pafplayers.PAFPlayer;
 import de.simonsator.partyandfriends.api.pafplayers.PAFPlayerManager;
 import de.simonsator.partyandfriends.main.Main;
 import me.leoko.advancedban.bungee.event.PunishmentEvent;
@@ -35,8 +34,7 @@ public class ABDeleterPlugin extends PAFExtension implements Listener {
 	@EventHandler
 	public void onBan(PunishmentEvent pEvent) {
 		if (pEvent.getPunishment().getDuration(true).equals("permanent")) {
-			PAFPlayer player = PAFPlayerManager.getInstance().getPlayer(pEvent.getPunishment().getUuid());
-			player.deleteAccount();
+			PAFPlayerManager.getInstance().getPlayer(pEvent.getPunishment().getUuid()).deleteAccount();
 		}
 	}
 
