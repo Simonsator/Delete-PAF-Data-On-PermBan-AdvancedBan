@@ -10,10 +10,10 @@ import java.io.IOException;
 public class ABDeleterMessages extends LanguageConfiguration {
 
 	protected ABDeleterMessages(File file, PAFPluginBase pPlugin) throws IOException {
-		super(Language.ENGLISH, file, pPlugin);
+		super(Language.ENGLISH, file, pPlugin, true);
 		copyFromJar();
 		readFile();
 		saveFile();
-		process(configuration);
+		process();
 	}
 }

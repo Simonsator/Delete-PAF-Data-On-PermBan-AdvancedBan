@@ -6,26 +6,21 @@ import de.simonsator.partyandfriends.api.pafplayers.PAFPlayerManager;
 import de.simonsator.partyandfriends.main.Main;
 import me.leoko.advancedban.bungee.event.PunishmentEvent;
 import me.leoko.advancedban.manager.PunishmentManager;
-import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
 
 import java.io.File;
 import java.io.IOException;
 
-/**
- * @author Simonsator
- * @version 1.0.0 13.08.17
- */
 public class ABDeleterPlugin extends PAFExtension implements Listener {
 	private String mutedMessage;
 
 	@Override
 	public void onEnable() {
 		try {
-			mutedMessage = new ABDeleterMessages(new File(getDataFolder(), "messages.yml"), this).getCreatedConfiguration().getString("YouAreMuted");
-			Main.getInstance().registerExtension(this);
-			ProxyServer.getInstance().getPluginManager().registerListener(this, this);
+			mutedMessage = new ABDeleterMessages(new File(getConfigFolder(), "messages.yml"), this).getString("YouAreMuted");
+			registerAsExtension();
+			getAdapter().registerListener(this, this);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -7,6 +7,9 @@
 	<groupId>de.simonsator</groupId>
 	<artifactId>Delete-PAF-Data-On-Perm-Ban-AdvancedBan</artifactId>
 	<version>1.0.1-SNAPSHOT</version>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 	<build>
 		<plugins>
 			<plugin>
@@ -59,6 +62,7 @@
 			<groupId>com.github.DevLeoko</groupId>
 			<artifactId>AdvancedBan</artifactId>
 			<version>v2.3.0</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 </project>
